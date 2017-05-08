@@ -1,0 +1,225 @@
+---
+# InfluxDB configuration
+influxdb_host: "localhost"
+influxdb_port: 8086
+influxdb_database: jmxDB
+influxdb_username: jmx
+influxdb_password: jmx
+
+# Global port to query JMX on
+# query_port and global_host_alias are mandatory
+# Will accept a blank space if alias and host is provided in host sets
+query_port: 1099
+global_host_alias:
+
+# Query definitions, every query needs obj, resultAlias, attr
+#   from jmxtrans format, "name" must be given for referencing
+#   the query in host sets
+queries:
+    - name: classloading
+      obj: "java.lang:type=ClassLoading"
+      resultAlias: "classloading"
+      typeNames:
+          - type
+      attr:
+          - "TotalLoadedClassCount"
+          - "LoadedClassCount"
+          - "UnloadedClassCount"
+    - name: memory
+      obj: "java.lang:type=Memory"
+      resultAlias: "memory"
+      typeNames:
+          - type
+      attr:
+          - "HeapMemoryUsage"
+          - "NonHeapMemoryUsage"
+    - name: mempool
+      obj: "java.lang:type=MemoryPool,name=*"
+      resultAlias: "mempool"
+      attr:
+          - "Usage"
+    - name: gc
+      obj: "java.lang:type=GarbageCollector,name=*"
+      resultAlias: "gc"
+      typeNames:
+          - type
+          - name
+      attr:
+          - "CollectionCount"
+          - "CollectionTime"
+    - name: sys
+      obj: "java.lang:type=OperatingSystem"
+      resultAlias: "sys"
+      typeNames:
+          - type
+      attr:
+          - "SystemLoadAverage"
+          - "AvailableProcessors"
+          - "TotalPhysicalMemorySize"
+          - "FreePhysicalMemorySize"
+          - "TotalSwapSpaceSize"
+          - "FreeSwapSpaceSize"
+          - "OpenFileDescriptorCount"
+          - "MaxFileDescriptorCount"
+          - "SystemCpuLoad"
+          - "ProcessCpuLoad"
+          - "ProcessCpuTime"
+          - "AvailableProcessors"
+    - name: threads
+      obj: "java.lang:type=Threading"
+      resultAlias: "threads"
+      typeNames:
+          - type
+      attr:
+          - "DaemonThreadCount"
+          - "PeakThreadCount"
+          - "ThreadCount"
+          - "TotalStartedThreadCount"
+    - name: camel
+      obj: "org.apache.camel:context=*,type=routes,name=*"
+      resultAlias: "camel"
+      typeNames:
+          - context
+          - name
+      attr:
+          - "ExchangesTotal" #Total number of exchanges
+          - "MaxProcessingTime" #Max Processing Time [milliseconds]
+          - "LastProcessingTime" #Last Processing Time [milliseconds]
+          - "TotalProcessingTime" #Total Processing Time [milliseconds]
+          - "ExchangesCompleted" #Number of completed exchanges
+          - "ExchangesFailed" #Number of failed exchanges
+          - "FailuresHandled" #Number of failures handled
+          - "MeanProcessingTime" #Mean Processing Time [milliseconds]
+    - name: hibernate
+      obj: "Hibernate:type=statistics,name=*"
+      resultAlias: "hibernate"
+      attr:
+          - "QueryExecutionMaxTime"
+          - "Queries"
+          - "TransactionCount"
+    - name: tomcat_threadpool
+      obj: "Catalina:type=ThreadPool,name=*"
+      resultAlias: "tomcat_threadpool"
+      typeNames:
+          - type
+      attr:
+          - "currentThreadCount" #Introspected attribute currentThreadCount
+          - "currentThreadsBusy" #Introspected attribute currentThreadsBusy
+          - "maxThreads" #Introspected attribute maxThreads
+          - "keepAliveTimeout" #Introspected attribute keepAliveTimeout
+          - "localPort" #Introspected attribute localPort
+          - "acceptorThreadCount" # Introspected attribute acceptorThreadCount
+          - "minSpareThreads" # Introspected attribute minSpareThreads
+          - "acceptorThreadPriority" # Introspected attribute acceptorThreadPriority
+          - "backlog" # Introspected attribute backlog
+          - "maxHeaderCount" # Introspected attribute maxHeaderCount
+          - "connectionCount" # Introspected attribute connectionCount
+    - name: tomcat_connector
+      obj: "Catalina:type=Connector,port=*"
+      resultAlias: "tomcat_connector"
+      typeNames:
+          - type
+      attr:
+          - "maxPostSize" # Maximum size in bytes of a POST which will be handled by the servlet API provided features
+          - "acceptCount" # The accept count for this Connector
+          - "threadPriority" # The thread priority for processors
+          - "maxSavePostSize" # Maximum size of a POST which will be saved by the container during authentication
+          - "maxParameterCount" # The maximum number of parameters (GET plus POST) which will be automatically parsed by the container. 10000 by default. A value of less than 0 means no limit.
+          - "maxThreads" # The maximum number of request processing threads to be created
+          - "connectionTimeout" # Timeout value on the incoming connection
+          - "processorCache" # The processor cache size.
+          - "keepAliveTimeout" # The number of seconds Tomcat will wait for a subsequent request before closing the connection
+          - "maxKeepAliveRequests" # Maximum number of Keep-Alive requests to honor per connection
+          - "packetSize" # The ajp packet size.
+          - "minSpareThreads" # The number of request processing threads that will be created
+          - "maxHeaderCount" # The maximum number of headers that are allowed by the container. 100 by default. A value of less than 0 means no limit.
+          - "port" # The port number on which this connector is configured to listen for requests. The special value of 0 means select a random free port when the socket is bound.
+    - name: tomcat_stringcache
+      obj: "Catalina:type=StringCache"
+      resultAlias: "tomcat_stringcache"
+      typeNames:
+          - type
+      attr:
+          - "accessCount" # Introspected attribute accessCount
+          - "hitCount" # Introspected attribute hitCount
+          - "cacheSize" # Introspected attribute cacheSize
+          - "trainThreshold" # Introspected attribute trainThreshold
+    - name: tomcat_req_proc
+      obj: "Catalina:type=GlobalRequestProcessor,name=*"
+      resultAlias: "tomcat_req_proc"
+      typeNames:
+          - type
+          - name
+      attr:
+          - "bytesReceived"
+          - "bytesSent"
+          - "processingTime"
+          - "requestCount"
+    - name: amq
+      obj: "org.apache.activemq:type=Broker,brokerName=*,destinationType=Queue,destinationName=*"
+      resultAlias: "amq"
+      typeNames:
+          - "Destination"
+      attr:
+          - "QueueSize"
+          - "EnqueueCount"
+          - "DequeueCount"
+          - "DispatchCount"
+          - "AverageEnqueueTime"
+          - "MemoryPercentUsage"
+          - "ProducerCount"
+          - "ConsumerCount"
+    - name: kafka_producer
+      obj: "kafka.producer:type=producer-node-metrics,client-id=*,node-id=*"
+      resultAlias: "kafka_producer"
+      typeNames:
+          - "Destination"
+      attr:
+          - "request-rate"
+          - "response-rate"
+          - "request-latency-avg"
+          - "incoming-byte-rate"
+          - "request-size-avg"
+          - "outgoing-byte-rate"
+# Define named sets of hosts that get the same queries
+# query_names and hosts is a list
+# Mention like machine01.yourdomain.com:5400;mac1
+# if query_port and global_host_alias are not specified
+sets:
+    - setname: prod_host_set_1
+      output_type: influxdb
+      query_names:
+          - mempool
+          - gc
+          - sys
+          - threads
+          - camel
+          - memory
+          - classloading
+          - hibernate
+          - tomcat_threadpool
+          - tomcat_connector
+          - tomcat_stringcache
+          - tomcat_req_proc
+      hosts:
+          # DC-1
+          - 192.168.1.11;dc1-host01_shah_com
+          - 192.168.1.12;dc1-host02_shah_com
+          - 192.168.1.13;dc1-host03_shah_com
+          - 192.168.1.14;dc1-host04_shah_com
+          - 192.168.1.15;dc1-host05_shah_com
+    - setname: prod_host_set_2
+      output_type: influxdb
+      query_names:
+          - mempool
+          - gc
+          - sys
+          - threads
+          - camel
+          - memory
+          - classloading
+          - hibernate
+          - amq
+      hosts:
+          # DC-2
+          - 192.1168.2.1:1299;dc2-host01_shah_com
