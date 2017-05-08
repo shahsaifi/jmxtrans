@@ -71,7 +71,7 @@ wget https://dl.influxdata.com/influxdb/releases/influxdb-1.2.2.x86_64.rpm
 sudo yum localinstall influxdb-1.2.2.x86_64.rpm
 ```
 
-2. Update `/etc/influxdb/influxdb.conf` with [influxdb.conf](https://github.com/shahsaifi/jmxtrans) in this repo:
+2. Update `/etc/influxdb/influxdb.conf` with [influxdb.conf](https://raw.githubusercontent.com/shahsaifi/jmxtrans/master/influxdb.conf) in this repo:
 ```bash
 sudo cp -avp /etc/influxdb/influxdb.conf /etc/influxdb/orig_influxdb.conf_$(date +'%Y%m%d%H%M')
 cat influxdb.conf > /etc/influxdb/influxdb.conf
