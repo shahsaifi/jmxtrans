@@ -90,7 +90,7 @@ systemctl status influxdb
 
 5. Login to influxdb:
 ```bash
-[root@jmxtrans1 ~]# influx
+[root@jmxtrans01 ~]# influx
 Connected to http://localhost:8086 version 1.2.2
 InfluxDB shell version: 1.2.2
 >
@@ -151,10 +151,10 @@ wget http://central.maven.org/maven2/org/jmxtrans/jmxtrans/264/jmxtrans-264-all.
 
 4. Verify jar in `lib` dir:
 ```bash
-[root@jmxtrans1 jmxtrans]# pwd
+[root@jmxtrans01 jmxtrans]# pwd
 /opt/jmxtrans
 
-[root@jmxtrans1 jmxtrans]# ls -l lib/
+[root@jmxtrans01 jmxtrans]# ls -l lib/
 total 32600
 -rw-r--r-- 1 root root 33380575 Mar 30 04:55 jmxtrans-264-all.jar
 lrwxrwxrwx 1 root root       20 Apr 21 00:58 jmxtrans-all.jar -> jmxtrans-264-all.jar
@@ -162,7 +162,7 @@ lrwxrwxrwx 1 root root       20 Apr 21 00:58 jmxtrans-all.jar -> jmxtrans-264-al
 
 5. Update repo content:
 ```bash
-git pull origin <staging/prod>
+git pull origin <branch_name>
 ```
 
 6. start jmxtrans:
@@ -181,12 +181,12 @@ tail -f /opt/jmxtrans/logs/jmxtrans.log
 
 1. After check-out this repo in `/opt`
 ```bash
-[root@jmxtrans1 jmxtrans]# pwd
+[root@jmxtrans01 jmxtrans]# pwd
 /opt/jmxtrans
 ```
 2. Run `install.sh`:
 ```bash
-[root@jmxtrans1 /opt/jmxtrans]# ./install.sh
+[root@jmxtrans01 /opt/jmxtrans]# ./install.sh
 ```
 
 ### Adding/updating jmx metrics :
@@ -220,10 +220,10 @@ conf.d/config.yaml
 ```
 4. After modifying `config.yaml` and linting, re-generate JSON files with:
 ```bash
-[root@jmxtrans1 conf.d]# pwd
+[root@jmxtrans01 conf.d]# pwd
 /opt/jmxtrans/conf.d
 
-[root@jmxtrans1 conf.d]# ../bin/yaml2json.py --file config.yaml
+[root@jmxtrans01 conf.d]# ../bin/yaml2json.py --file config.yaml
 ```
 5. check-in updates to git:
 ```bash
@@ -240,13 +240,13 @@ tail -f /opt/jmxtrans/logs/jmxtrans.log
 ```
 8. Log-in to influxDB or use rest API to verify new metrics data:
 ```bash
-# curl -v -G 'http://jmxtrans1.shah.com:8086/query?pretty=true' --data-urlencode "db=jmxDB" --data-urlencode "q=select * from "amq" where "hostname" = 'dc1-host01_shah_com' limit 1"
-* About to connect() to jmxtrans1.shah.com port 8086 (#0)
+# curl -v -G 'http://jmxtrans01.shah.com:8086/query?pretty=true' --data-urlencode "db=jmxDB" --data-urlencode "q=select * from "amq" where "hostname" = 'dc1-host01_shah_com' limit 1"
+* About to connect() to jmxtrans01.shah.com port 8086 (#0)
 *   Trying 10.20.23.74...
-* Connected to jmxtrans1.shah.com (10.20.23.74) port 8086 (#0)
+* Connected to jmxtrans01.shah.com (10.20.23.74) port 8086 (#0)
 > GET /query?pretty=true&db=jmxDB&q=select%20%2A%20from%20amq%20where%20hostname%20%3D%20%27dc1-host01_shah_com%27%20limit%201 HTTP/1.1
 > User-Agent: curl/7.29.0
-> Host: jmxtrans1.shah.com:8086
+> Host: jmxtrans01.shah.com:8086
 > Accept: */*
 >
 < HTTP/1.1 200 OK
