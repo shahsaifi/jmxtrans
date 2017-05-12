@@ -100,7 +100,7 @@ class Queries(object):
             url = Template(urlTemplate)
             hostentry['url'] = url.substitute(hostname=host_name, query_port=query_port, setname=set_name, hostshortname=hostShortName)
 
-        if self.output_type == 'graphite':
+        if self.output_type == 'influxdb':
             hostentry['numQueryThreads'] = len(hostentry['queries'])
 
         return hostentry
