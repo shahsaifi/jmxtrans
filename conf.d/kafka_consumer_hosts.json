@@ -1,0 +1,339 @@
+{
+ "servers": [
+  {
+   "numQueryThreads": 3, 
+   "alias": "dc1-kfconsumer1.shah.com", 
+   "host": "192.168.2.211", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 3, 
+   "alias": "dc1-kfconsumer2.shah.com", 
+   "host": "192.168.2.212", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 3, 
+   "alias": "dc1-kfconsumer3.shah.com", 
+   "host": "192.168.2.213", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 3, 
+   "alias": "dc1-kfconsumer4.shah.com", 
+   "host": "192.168.2.214", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 3, 
+   "alias": "dc1-kfconsumer5.shah.com", 
+   "host": "192.168.2.215", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }
+ ]
+}

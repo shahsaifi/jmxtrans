@@ -1,0 +1,1344 @@
+{
+ "servers": [
+  {
+   "numQueryThreads": 12, 
+   "alias": "dc1-host01_shah_com", 
+   "host": "192.168.1.11", 
+   "port": 1099, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "mempool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount", 
+      "SystemCpuLoad", 
+      "ProcessCpuLoad", 
+      "ProcessCpuTime", 
+      "AvailableProcessors"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "camel", 
+     "obj": "org.apache.camel:context=*,type=routes,name=*", 
+     "attr": [
+      "ExchangesTotal", 
+      "MaxProcessingTime", 
+      "LastProcessingTime", 
+      "TotalProcessingTime", 
+      "ExchangesCompleted", 
+      "ExchangesFailed", 
+      "FailuresHandled", 
+      "MeanProcessingTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "memory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "classloading", 
+     "obj": "java.lang:type=ClassLoading", 
+     "attr": [
+      "TotalLoadedClassCount", 
+      "LoadedClassCount", 
+      "UnloadedClassCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_threadpool", 
+     "obj": "Catalina:type=ThreadPool,name=*", 
+     "attr": [
+      "currentThreadCount", 
+      "currentThreadsBusy", 
+      "maxThreads", 
+      "keepAliveTimeout", 
+      "localPort", 
+      "acceptorThreadCount", 
+      "minSpareThreads", 
+      "acceptorThreadPriority", 
+      "backlog", 
+      "maxHeaderCount", 
+      "connectionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_connector", 
+     "obj": "Catalina:type=Connector,port=*", 
+     "attr": [
+      "maxPostSize", 
+      "acceptCount", 
+      "threadPriority", 
+      "maxSavePostSize", 
+      "maxParameterCount", 
+      "maxThreads", 
+      "connectionTimeout", 
+      "processorCache", 
+      "keepAliveTimeout", 
+      "maxKeepAliveRequests", 
+      "packetSize", 
+      "minSpareThreads", 
+      "maxHeaderCount", 
+      "port"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_stringcache", 
+     "obj": "Catalina:type=StringCache", 
+     "attr": [
+      "accessCount", 
+      "hitCount", 
+      "cacheSize", 
+      "trainThreshold"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_req_proc", 
+     "obj": "Catalina:type=GlobalRequestProcessor,name=*", 
+     "attr": [
+      "bytesReceived", 
+      "bytesSent", 
+      "processingTime", 
+      "requestCount"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 12, 
+   "alias": "dc1-host02_shah_com", 
+   "host": "192.168.1.12", 
+   "port": 1099, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "mempool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount", 
+      "SystemCpuLoad", 
+      "ProcessCpuLoad", 
+      "ProcessCpuTime", 
+      "AvailableProcessors"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "camel", 
+     "obj": "org.apache.camel:context=*,type=routes,name=*", 
+     "attr": [
+      "ExchangesTotal", 
+      "MaxProcessingTime", 
+      "LastProcessingTime", 
+      "TotalProcessingTime", 
+      "ExchangesCompleted", 
+      "ExchangesFailed", 
+      "FailuresHandled", 
+      "MeanProcessingTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "memory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "classloading", 
+     "obj": "java.lang:type=ClassLoading", 
+     "attr": [
+      "TotalLoadedClassCount", 
+      "LoadedClassCount", 
+      "UnloadedClassCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_threadpool", 
+     "obj": "Catalina:type=ThreadPool,name=*", 
+     "attr": [
+      "currentThreadCount", 
+      "currentThreadsBusy", 
+      "maxThreads", 
+      "keepAliveTimeout", 
+      "localPort", 
+      "acceptorThreadCount", 
+      "minSpareThreads", 
+      "acceptorThreadPriority", 
+      "backlog", 
+      "maxHeaderCount", 
+      "connectionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_connector", 
+     "obj": "Catalina:type=Connector,port=*", 
+     "attr": [
+      "maxPostSize", 
+      "acceptCount", 
+      "threadPriority", 
+      "maxSavePostSize", 
+      "maxParameterCount", 
+      "maxThreads", 
+      "connectionTimeout", 
+      "processorCache", 
+      "keepAliveTimeout", 
+      "maxKeepAliveRequests", 
+      "packetSize", 
+      "minSpareThreads", 
+      "maxHeaderCount", 
+      "port"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_stringcache", 
+     "obj": "Catalina:type=StringCache", 
+     "attr": [
+      "accessCount", 
+      "hitCount", 
+      "cacheSize", 
+      "trainThreshold"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_req_proc", 
+     "obj": "Catalina:type=GlobalRequestProcessor,name=*", 
+     "attr": [
+      "bytesReceived", 
+      "bytesSent", 
+      "processingTime", 
+      "requestCount"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 12, 
+   "alias": "dc1-host03_shah_com", 
+   "host": "192.168.1.13", 
+   "port": 1099, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "mempool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount", 
+      "SystemCpuLoad", 
+      "ProcessCpuLoad", 
+      "ProcessCpuTime", 
+      "AvailableProcessors"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "camel", 
+     "obj": "org.apache.camel:context=*,type=routes,name=*", 
+     "attr": [
+      "ExchangesTotal", 
+      "MaxProcessingTime", 
+      "LastProcessingTime", 
+      "TotalProcessingTime", 
+      "ExchangesCompleted", 
+      "ExchangesFailed", 
+      "FailuresHandled", 
+      "MeanProcessingTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "memory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "classloading", 
+     "obj": "java.lang:type=ClassLoading", 
+     "attr": [
+      "TotalLoadedClassCount", 
+      "LoadedClassCount", 
+      "UnloadedClassCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_threadpool", 
+     "obj": "Catalina:type=ThreadPool,name=*", 
+     "attr": [
+      "currentThreadCount", 
+      "currentThreadsBusy", 
+      "maxThreads", 
+      "keepAliveTimeout", 
+      "localPort", 
+      "acceptorThreadCount", 
+      "minSpareThreads", 
+      "acceptorThreadPriority", 
+      "backlog", 
+      "maxHeaderCount", 
+      "connectionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_connector", 
+     "obj": "Catalina:type=Connector,port=*", 
+     "attr": [
+      "maxPostSize", 
+      "acceptCount", 
+      "threadPriority", 
+      "maxSavePostSize", 
+      "maxParameterCount", 
+      "maxThreads", 
+      "connectionTimeout", 
+      "processorCache", 
+      "keepAliveTimeout", 
+      "maxKeepAliveRequests", 
+      "packetSize", 
+      "minSpareThreads", 
+      "maxHeaderCount", 
+      "port"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_stringcache", 
+     "obj": "Catalina:type=StringCache", 
+     "attr": [
+      "accessCount", 
+      "hitCount", 
+      "cacheSize", 
+      "trainThreshold"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_req_proc", 
+     "obj": "Catalina:type=GlobalRequestProcessor,name=*", 
+     "attr": [
+      "bytesReceived", 
+      "bytesSent", 
+      "processingTime", 
+      "requestCount"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 12, 
+   "alias": "dc1-host04_shah_com", 
+   "host": "192.168.1.14", 
+   "port": 1099, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "mempool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount", 
+      "SystemCpuLoad", 
+      "ProcessCpuLoad", 
+      "ProcessCpuTime", 
+      "AvailableProcessors"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "camel", 
+     "obj": "org.apache.camel:context=*,type=routes,name=*", 
+     "attr": [
+      "ExchangesTotal", 
+      "MaxProcessingTime", 
+      "LastProcessingTime", 
+      "TotalProcessingTime", 
+      "ExchangesCompleted", 
+      "ExchangesFailed", 
+      "FailuresHandled", 
+      "MeanProcessingTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "memory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "classloading", 
+     "obj": "java.lang:type=ClassLoading", 
+     "attr": [
+      "TotalLoadedClassCount", 
+      "LoadedClassCount", 
+      "UnloadedClassCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_threadpool", 
+     "obj": "Catalina:type=ThreadPool,name=*", 
+     "attr": [
+      "currentThreadCount", 
+      "currentThreadsBusy", 
+      "maxThreads", 
+      "keepAliveTimeout", 
+      "localPort", 
+      "acceptorThreadCount", 
+      "minSpareThreads", 
+      "acceptorThreadPriority", 
+      "backlog", 
+      "maxHeaderCount", 
+      "connectionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_connector", 
+     "obj": "Catalina:type=Connector,port=*", 
+     "attr": [
+      "maxPostSize", 
+      "acceptCount", 
+      "threadPriority", 
+      "maxSavePostSize", 
+      "maxParameterCount", 
+      "maxThreads", 
+      "connectionTimeout", 
+      "processorCache", 
+      "keepAliveTimeout", 
+      "maxKeepAliveRequests", 
+      "packetSize", 
+      "minSpareThreads", 
+      "maxHeaderCount", 
+      "port"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_stringcache", 
+     "obj": "Catalina:type=StringCache", 
+     "attr": [
+      "accessCount", 
+      "hitCount", 
+      "cacheSize", 
+      "trainThreshold"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_req_proc", 
+     "obj": "Catalina:type=GlobalRequestProcessor,name=*", 
+     "attr": [
+      "bytesReceived", 
+      "bytesSent", 
+      "processingTime", 
+      "requestCount"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 12, 
+   "alias": "dc1-host05_shah_com", 
+   "host": "192.168.1.15", 
+   "port": 1099, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "mempool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount", 
+      "SystemCpuLoad", 
+      "ProcessCpuLoad", 
+      "ProcessCpuTime", 
+      "AvailableProcessors"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "camel", 
+     "obj": "org.apache.camel:context=*,type=routes,name=*", 
+     "attr": [
+      "ExchangesTotal", 
+      "MaxProcessingTime", 
+      "LastProcessingTime", 
+      "TotalProcessingTime", 
+      "ExchangesCompleted", 
+      "ExchangesFailed", 
+      "FailuresHandled", 
+      "MeanProcessingTime"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "memory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "classloading", 
+     "obj": "java.lang:type=ClassLoading", 
+     "attr": [
+      "TotalLoadedClassCount", 
+      "LoadedClassCount", 
+      "UnloadedClassCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_threadpool", 
+     "obj": "Catalina:type=ThreadPool,name=*", 
+     "attr": [
+      "currentThreadCount", 
+      "currentThreadsBusy", 
+      "maxThreads", 
+      "keepAliveTimeout", 
+      "localPort", 
+      "acceptorThreadCount", 
+      "minSpareThreads", 
+      "acceptorThreadPriority", 
+      "backlog", 
+      "maxHeaderCount", 
+      "connectionCount"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_connector", 
+     "obj": "Catalina:type=Connector,port=*", 
+     "attr": [
+      "maxPostSize", 
+      "acceptCount", 
+      "threadPriority", 
+      "maxSavePostSize", 
+      "maxParameterCount", 
+      "maxThreads", 
+      "connectionTimeout", 
+      "processorCache", 
+      "keepAliveTimeout", 
+      "maxKeepAliveRequests", 
+      "packetSize", 
+      "minSpareThreads", 
+      "maxHeaderCount", 
+      "port"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_stringcache", 
+     "obj": "Catalina:type=StringCache", 
+     "attr": [
+      "accessCount", 
+      "hitCount", 
+      "cacheSize", 
+      "trainThreshold"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "tomcat_req_proc", 
+     "obj": "Catalina:type=GlobalRequestProcessor,name=*", 
+     "attr": [
+      "bytesReceived", 
+      "bytesSent", 
+      "processingTime", 
+      "requestCount"
+     ]
+    }
+   ]
+  }
+ ]
+}

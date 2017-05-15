@@ -1,0 +1,3119 @@
+{
+ "servers": [
+  {
+   "numQueryThreads": 29, 
+   "alias": "dc1-kfbroker1.shah.com", 
+   "host": "192.168.2.11", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UnderReplicatedPartitions", 
+     "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "PartitionCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=PartitionCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=LeaderCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "RequestHandlerAvgIdlePercent", 
+     "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent", 
+     "attr": [
+      "MeanRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "OfflinePartitionsCount", 
+     "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ActiveControllerCount", 
+     "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderElectionRateAndTimeMs", 
+     "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UncleanLeaderElectionsPerSec", 
+     "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "NetworkProcessorAvgIdlePercent", 
+     "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LogFlush", 
+     "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "50thPercentile", 
+      "Min", 
+      "Mean", 
+      "StdDev", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile", 
+      "Count", 
+      "Max"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConnectMetrics", 
+     "obj": "kafka.producer:type=producer-metrics,client-id=*", 
+     "attr": [
+      "request-latency-avg", 
+      "request-latency-max", 
+      "request-rate", 
+      "response-rate", 
+      "incoming-byte-rate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 29, 
+   "alias": "dc1-kfbroker2.shah.com", 
+   "host": "192.168.2.12", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UnderReplicatedPartitions", 
+     "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "PartitionCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=PartitionCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=LeaderCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "RequestHandlerAvgIdlePercent", 
+     "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent", 
+     "attr": [
+      "MeanRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "OfflinePartitionsCount", 
+     "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ActiveControllerCount", 
+     "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderElectionRateAndTimeMs", 
+     "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UncleanLeaderElectionsPerSec", 
+     "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "NetworkProcessorAvgIdlePercent", 
+     "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LogFlush", 
+     "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "50thPercentile", 
+      "Min", 
+      "Mean", 
+      "StdDev", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile", 
+      "Count", 
+      "Max"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConnectMetrics", 
+     "obj": "kafka.producer:type=producer-metrics,client-id=*", 
+     "attr": [
+      "request-latency-avg", 
+      "request-latency-max", 
+      "request-rate", 
+      "response-rate", 
+      "incoming-byte-rate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 29, 
+   "alias": "dc1-kfbroker3.shah.com", 
+   "host": "192.168.2.13", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UnderReplicatedPartitions", 
+     "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "PartitionCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=PartitionCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=LeaderCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "RequestHandlerAvgIdlePercent", 
+     "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent", 
+     "attr": [
+      "MeanRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "OfflinePartitionsCount", 
+     "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ActiveControllerCount", 
+     "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderElectionRateAndTimeMs", 
+     "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UncleanLeaderElectionsPerSec", 
+     "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "NetworkProcessorAvgIdlePercent", 
+     "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LogFlush", 
+     "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "50thPercentile", 
+      "Min", 
+      "Mean", 
+      "StdDev", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile", 
+      "Count", 
+      "Max"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConnectMetrics", 
+     "obj": "kafka.producer:type=producer-metrics,client-id=*", 
+     "attr": [
+      "request-latency-avg", 
+      "request-latency-max", 
+      "request-rate", 
+      "response-rate", 
+      "incoming-byte-rate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 29, 
+   "alias": "dc1-kfbroker4.shah.com", 
+   "host": "192.168.2.14", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UnderReplicatedPartitions", 
+     "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "PartitionCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=PartitionCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=LeaderCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "RequestHandlerAvgIdlePercent", 
+     "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent", 
+     "attr": [
+      "MeanRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "OfflinePartitionsCount", 
+     "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ActiveControllerCount", 
+     "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderElectionRateAndTimeMs", 
+     "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UncleanLeaderElectionsPerSec", 
+     "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "NetworkProcessorAvgIdlePercent", 
+     "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LogFlush", 
+     "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "50thPercentile", 
+      "Min", 
+      "Mean", 
+      "StdDev", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile", 
+      "Count", 
+      "Max"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConnectMetrics", 
+     "obj": "kafka.producer:type=producer-metrics,client-id=*", 
+     "attr": [
+      "request-latency-avg", 
+      "request-latency-max", 
+      "request-rate", 
+      "response-rate", 
+      "incoming-byte-rate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }, 
+  {
+   "numQueryThreads": 29, 
+   "alias": "dc1-kfbroker5.shah.com", 
+   "host": "192.168.2.15", 
+   "port": 9999, 
+   "queries": [
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UnderReplicatedPartitions", 
+     "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "MessagesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesInPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSec", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "BytesOutPerSecPerTopic", 
+     "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "PartitionCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=PartitionCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderCount", 
+     "obj": "kafka.server:type=ReplicaManager,name=LeaderCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "RequestHandlerAvgIdlePercent", 
+     "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent", 
+     "attr": [
+      "MeanRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "OfflinePartitionsCount", 
+     "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ActiveControllerCount", 
+     "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LeaderElectionRateAndTimeMs", 
+     "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "UncleanLeaderElectionsPerSec", 
+     "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec", 
+     "attr": [
+      "Count"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestsPerSec", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerTotalTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchFollowerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "FetchConsumerRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ProduceRequestQueueTimeMs", 
+     "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce", 
+     "attr": [
+      "Count", 
+      "Min", 
+      "Max", 
+      "Mean", 
+      "StdDev", 
+      "50thPercentile", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "NetworkProcessorAvgIdlePercent", 
+     "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent", 
+     "attr": [
+      "Value"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "jvmMemory", 
+     "obj": "java.lang:type=Memory", 
+     "attr": [
+      "HeapMemoryUsage", 
+      "NonHeapMemoryUsage"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "LogFlush", 
+     "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "50thPercentile", 
+      "Min", 
+      "Mean", 
+      "StdDev", 
+      "75thPercentile", 
+      "95thPercentile", 
+      "98thPercentile", 
+      "99thPercentile", 
+      "999thPercentile", 
+      "Count", 
+      "Max"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConsumerMetrics", 
+     "obj": "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*", 
+     "attr": [
+      "bytes-consumed-rate", 
+      "fetch-latency-avg", 
+      "fetch-rate", 
+      "records-lag-max", 
+      "records-per-request-avg"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "ConnectMetrics", 
+     "obj": "kafka.producer:type=producer-metrics,client-id=*", 
+     "attr": [
+      "request-latency-avg", 
+      "request-latency-max", 
+      "request-rate", 
+      "response-rate", 
+      "incoming-byte-rate"
+     ]
+    }, 
+    {
+     "outputWriters": [
+      {
+       "username": "jmx", 
+       "database": "jmxDB", 
+       "url": "http://localhost:8086/", 
+       "retentionPolicy": "autogen", 
+       "password": "jmx", 
+       "@class": "com.googlecode.jmxtrans.model.output.InfluxDbWriterFactory"
+      }
+     ], 
+     "resultAlias": "os", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "FreePhysicalMemorySize", 
+      "ProcessCpuLoad", 
+      "SystemCpuLoad", 
+      "SystemLoadAverage"
+     ]
+    }
+   ]
+  }
+ ]
+}

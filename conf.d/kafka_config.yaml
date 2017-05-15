@@ -1,0 +1,383 @@
+---
+# InfluxDB PROD configuration
+influxdb_host: "localhost"
+influxdb_port: 8086
+influxdb_database: jmxDB
+influxdb_username: jmx
+influxdb_password: jmx
+
+# Global port to query JMX on
+# query_port and global_host_alias are mandatory
+# Will accept a blank space if alias and host is provided in host sets
+query_port: 9999
+global_host_alias:
+
+# Query definitions, every query needs obj, resultAlias, attr
+#   from jmxtrans format, "name" must be given for referencing
+#   the query in host sets
+queries:
+    - name: UnderReplicatedPartitions
+      obj: "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions"
+      resultAlias: "UnderReplicatedPartitions"
+      typeNames:
+          - type
+      attr:
+          - "Value"
+    - name: MessagesInPerSec
+      obj: "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec"
+      resultAlias: "MessagesInPerSec"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: MessagesInPerSecPerTopic
+      obj: "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*"
+      resultAlias: "MessagesInPerSecPerTopic"
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: BytesInPerSec
+      obj: "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec"
+      resultAlias: "BytesInPerSec"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: BytesInPerSecPerTopic
+      obj: "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*"
+      resultAlias: "BytesInPerSecPerTopic"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: BytesOutPerSec
+      obj: "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec"
+      resultAlias: "BytesOutPerSec"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: BytesOutPerSecPerTopic
+      obj: "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*"
+      resultAlias: "BytesOutPerSecPerTopic"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: PartitionCount
+      obj: "kafka.server:type=ReplicaManager,name=PartitionCount"
+      resultAlias: "PartitionCount"
+      attr:
+          - "Value"
+    - name: LeaderCount
+      obj: "kafka.server:type=ReplicaManager,name=LeaderCount"
+      resultAlias: "LeaderCount"
+      typeNames:
+          - type
+      attr:
+          - "Value"
+    - name: RequestHandlerAvgIdlePercent
+      obj: "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent"
+      resultAlias: "RequestHandlerAvgIdlePercent"
+      typeNames:
+          - type
+      attr:
+          - "MeanRate"
+    - name: OfflinePartitionsCount
+      obj: "kafka.controller:type=KafkaController,name=OfflinePartitionsCount"
+      resultAlias: "OfflinePartitionsCount"
+      typeNames:
+          - type
+      attr:
+          - "Value"
+    - name: ActiveControllerCount
+      obj: "kafka.controller:type=KafkaController,name=ActiveControllerCount"
+      resultAlias: "ActiveControllerCount"
+      typeNames:
+          - type
+      attr:
+          - "Value"
+    - name: LeaderElectionRateAndTimeMs
+      obj: "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs"
+      resultAlias: "LeaderElectionRateAndTimeMs"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+    - name: UncleanLeaderElectionsPerSec
+      obj: "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec"
+      resultAlias: "UncleanLeaderElectionsPerSec"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+    - name: ProduceRequestsPerSec
+      obj: "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce"
+      resultAlias: "ProduceRequestsPerSec"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: FetchConsumerRequestsPerSec
+      obj: "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer"
+      resultAlias: "FetchConsumerRequestsPerSec"
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: FetchFollowerRequestsPerSec
+      obj: "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower"
+      resultAlias: "FetchFollowerRequestsPerSec"
+      attr:
+          - "Count"
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+    - name: ProduceTotalTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce"
+      resultAlias: "ProduceTotalTimeMs"
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: FetchConsumerTotalTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer"
+      resultAlias: "FetchConsumerTotalTimeMs"
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: FetchFollowerTotalTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower"
+      resultAlias: "FetchFollowerTotalTimeMs"
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: FetchFollowerRequestQueueTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower"
+      resultAlias: "FetchFollowerRequestQueueTimeMs"
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: FetchConsumerRequestQueueTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer"
+      resultAlias: "FetchConsumerRequestQueueTimeMs"
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: ProduceRequestQueueTimeMs
+      obj: "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce"
+      resultAlias: "ProduceRequestQueueTimeMs"
+      typeNames:
+          - type
+      attr:
+          - "Count"
+          - "Min"
+          - "Max"
+          - "Mean"
+          - "StdDev"
+          - "50thPercentile"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+    - name: NetworkProcessorAvgIdlePercent
+      obj: "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent"
+      resultAlias: "NetworkProcessorAvgIdlePercent"
+      attr:
+          - "Value"
+    - name: jvmMemory
+      obj: "java.lang:type=Memory"
+      resultAlias: "jvmMemory"
+      attr:
+          - "HeapMemoryUsage"
+          - "NonHeapMemoryUsage"
+    - name: os
+      obj: "java.lang:type=OperatingSystem"
+      resultAlias: "os"
+      attr:
+          - "FreePhysicalMemorySize"
+          - "ProcessCpuLoad"
+          - "SystemCpuLoad"
+          - "SystemLoadAverage"
+    - name: LogFlush
+      obj: "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs"
+      resultAlias: "LogFlush"
+      attr:
+          - "MeanRate"
+          - "OneMinuteRate"
+          - "FiveMinuteRate"
+          - "FifteenMinuteRate"
+          - "50thPercentile"
+          - "Min"
+          - "Mean"
+          - "StdDev"
+          - "75thPercentile"
+          - "95thPercentile"
+          - "98thPercentile"
+          - "99thPercentile"
+          - "999thPercentile"
+          - "Count"
+          - "Max"
+    - name: ConsumerMetrics
+      obj: "kafka.consumer:type=consumer-fetch-manager-metrics,client-id=*"
+      resultAlias: "ConsumerMetrics"
+      attr:
+          - "bytes-consumed-rate"
+          - "fetch-latency-avg"
+          - "fetch-rate"
+          - "records-lag-max"
+          - "records-per-request-avg"
+    - name: ConnectMetrics
+      obj: "kafka.producer:type=producer-metrics,client-id=*"
+      resultAlias: "ConnectMetrics"
+      attr:
+          - "request-latency-avg"
+          - "request-latency-max"
+          - "request-rate"
+          - "response-rate"
+          - "incoming-byte-rate"
+# Define named sets of hosts that get the same queries
+# query_names and hosts is a list
+# Mention like machine01.yourdomain.com:5400;mac1
+# if query_port and global_host_alias are not specified
+sets:
+    - setname: kafka_broker_hosts
+      output_type: influxdb
+      query_names:
+          - UnderReplicatedPartitions
+          - MessagesInPerSec
+          - MessagesInPerSecPerTopic
+          - BytesInPerSec
+          - BytesInPerSecPerTopic
+          - BytesOutPerSec
+          - BytesOutPerSecPerTopic
+          - PartitionCount
+          - LeaderCount
+          - RequestHandlerAvgIdlePercent
+          - OfflinePartitionsCount
+          - ActiveControllerCount
+          - LeaderElectionRateAndTimeMs
+          - UncleanLeaderElectionsPerSec
+          - ProduceRequestsPerSec
+          - FetchConsumerRequestsPerSec
+          - FetchFollowerRequestsPerSec
+          - ProduceTotalTimeMs
+          - FetchConsumerTotalTimeMs
+          - FetchFollowerTotalTimeMs
+          - FetchFollowerRequestQueueTimeMs
+          - FetchConsumerRequestQueueTimeMs
+          - ProduceRequestQueueTimeMs
+          - NetworkProcessorAvgIdlePercent
+          - jvmMemory
+          - LogFlush
+          - ConsumerMetrics
+          - ConnectMetrics
+          - os
+      hosts:
+          # Kafka_Broker_Hosts
+          - 192.168.2.11;dc1-kfbroker1.shah.com
+          - 192.168.2.12;dc1-kfbroker2.shah.com
+          - 192.168.2.13;dc1-kfbroker3.shah.com
+          - 192.168.2.14;dc1-kfbroker4.shah.com
+          - 192.168.2.15;dc1-kfbroker5.shah.com
+    - setname: kafka_producer_hosts
+      output_type: influxdb
+      query_names:
+          - jvmMemory
+          - ConnectMetrics
+          - os
+      hosts:
+          # Kafka_Producer_Hosts
+          - 192.168.2.111;dc1-kfprod1.shah.com
+          - 192.168.2.112;dc1-kfprod2.shah.com
+          - 192.168.2.113;dc1-kfprod3.shah.com
+          - 192.168.2.114;dc1-kfprod4.shah.com
+          - 192.168.2.115;dc1-kfprod5.shah.com
+    - setname: kafka_consumer_hosts
+      output_type: influxdb
+      query_names:
+          - jvmMemory
+          - ConsumerMetrics
+          - os
+      hosts:
+          # Kafka_Broker_Hosts
+          - 192.168.2.211;dc1-kfconsumer1.shah.com
+          - 192.168.2.212;dc1-kfconsumer2.shah.com
+          - 192.168.2.213;dc1-kfconsumer3.shah.com
+          - 192.168.2.214;dc1-kfconsumer4.shah.com
+          - 192.168.2.215;dc1-kfconsumer5.shah.com
