@@ -307,3 +307,40 @@ tail -f /opt/jmxtrans/logs/jmxtrans.log
 }
 * Closing connection 0
 ```
+
+### Kafka Metrics
+> After enabling JMX refer `conf.d/kafka_config.yaml`
+
+### InfluxDB : Backup and Restore
+
+> InfluxDB has the ability to snapshot an instance at a point-in-time and restore it. All backups are full backups. InfluxDB does not yet support incremental backups. There are two types of data to backup, the metastore and the metrics themselves. The metastore is backed up in its entirety. The metrics are backed up per-database in a separate operation from the metastore backup.
+
+> Each database must be backed up individually.
+
+> Note: Metastore backups are also included in per-database backups. Following commands were issued from `dc1-fluxdb1.shah.com`.
+
+1. Take a backup of the `autogen` retention policy for the `jmx` database by using the command:
+
+```bash
+influxd backup -host 192.168.18.83:8088 -database jmx -retention autogen /metrics/backups/jmxDB
+```
+
+2. The backup can be restored in two steps. First, the metastore needs to be restored so that InfluxDB knows which databases exist:
+```bash
+influxd restore -metadir /metrics/influxdb/meta jmxDB
+```
+
+3. Once the metastore has been restored, we can now recover the backed up data. We backed up the `jmx` database to `/metrics/backups/jmxDB`, so let’s restore that same dataset. To restore the `jmx` database:
+```bash
+influxd restore -database jmx -datadir /metrics/influxdb/data jmxDB
+```
+
+4. Once the backed up data has been recovered, the permissions on the shards may no longer be accurate. To ensure the file permissions are correct, please run:
+```bash
+chown -R influxdb:influxdb /metrics/influxdb
+```
+
+5. Once the data and metastore are recovered, it’s time to restart the database:
+```bash
+service influxdb restart
+```
