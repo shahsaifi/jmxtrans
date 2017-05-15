@@ -309,7 +309,7 @@ tail -f /opt/jmxtrans/logs/jmxtrans.log
 ```
 
 ### Kafka Metrics
-> After enabling JMX refer `[conf.d/kafka_config.yaml]`(https://github.com/shahsaifi/jmxtrans/blob/master/conf.d/kafka_config.yaml)
+> After enabling JMX refer [conf.d/kafka_config.yaml](https://github.com/shahsaifi/jmxtrans/blob/master/conf.d/kafka_config.yaml)
 
 ### InfluxDB : Backup and Restore
 
